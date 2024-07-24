@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background: #f2f2f2;
+  height: 100vh;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 3rem;
+}
+h1 span {
+  background: #000;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+.logos {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 30px;
+  background: #fff;
+  white-space: nowrap;
+}
+.logos::before,
+.logos::after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+.logos::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 8s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide2 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
